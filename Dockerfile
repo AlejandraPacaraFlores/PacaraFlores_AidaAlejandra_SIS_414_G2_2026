@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 # Da permisos de ejecución al wrapper de gradle y construye el proyecto
 RUN chmod +x ./gradlew
-RUN ./gradlew clean bootJar -x test
+RUN ./gradlew clean bootJar -x test --no-daemon
 
 # Fase de ejecución
 FROM eclipse-temurin:17-jre-alpine
